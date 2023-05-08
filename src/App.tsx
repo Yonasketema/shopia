@@ -1,8 +1,17 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import ProductGrid from "./components/ProductGrid";
+import CategoryList from "./components/CategoryList";
+import { useState } from "react";
+
+export interface Category {
+  name: string;
+  params: string[];
+}
 
 function App() {
+  const [category, setCategory] = useState<Category | null>(null);
+
   return (
     <>
       <Grid
@@ -12,6 +21,10 @@ function App() {
                "header header" 
                "aside main"`, // >1024
         }}
+        templateColumns={{
+          base: "1fr",
+          lg: "250px 1fr",
+        }}
       >
         <GridItem area="nav">
           <NavBar />
@@ -20,12 +33,12 @@ function App() {
           header
         </GridItem>
         <Show above="lg">
-          <GridItem area="aside" bg="orange.300" width="250px">
-            Aside
+          <GridItem area="aside" bg="orange.300" paddingX={5}>
+            <CategoryList onSelectCategory={setCategory} />
           </GridItem>
         </Show>
         <GridItem area="main">
-          <ProductGrid />
+          <ProductGrid selectedCategory={category} />
         </GridItem>
       </Grid>
     </>

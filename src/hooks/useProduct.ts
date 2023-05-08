@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 import { CanceledError } from "axios";
+import { Category } from "../App";
 
 export interface Product {
   id: number;
@@ -9,7 +10,7 @@ export interface Product {
   image_uri: string;
 }
 
-const useProduct = () => {
+const useProduct = (selectedCategory: Category | null) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
@@ -19,7 +20,10 @@ const useProduct = () => {
 
     setLoading(true);
     apiClient
-      .get<Product[]>("/product", { signal: controller.signal })
+      .get<Product[]>("/product", {
+        signal: controller.signal,
+        params: { categories: selectedCategory?.params.join(",") },
+      })
       .then((res) => {
         setProducts(res.data);
         setLoading(false);
@@ -31,7 +35,7 @@ const useProduct = () => {
       });
 
     return () => controller.abort();
-  }, []);
+  }, [selectedCategory]);
 
   return { products, error, isLoading };
 };
