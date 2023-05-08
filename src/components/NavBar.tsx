@@ -1,17 +1,21 @@
 import { HStack, Text } from "@chakra-ui/react";
+import SearchInput from "./SearchInput";
 
 function NavBar() {
   return (
     <HStack
-      padding={3}
+      paddingX={3}
+      paddingY={6}
       fontWeight="bold"
       borderColor="gray.300"
       borderBottomWidth={1}
       boxShadow="sm"
     >
-      <Text fontSize="3xl" fontWeight="300">
+      <Text fontSize="3xl" fontWeight="300" marginRight={150}>
         Shopia
       </Text>
+
+      <SearchInput />
     </HStack>
   );
 }
