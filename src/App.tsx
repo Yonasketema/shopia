@@ -32,7 +32,10 @@ function App() {
         {/* <GridItem area="header">header</GridItem> */}
         <Show above="lg">
           <GridItem area="aside" paddingX={5} paddingY={7}>
-            <CategoryList onSelectCategory={setCategory} />
+            <CategoryList
+              onSelectCategory={setCategory}
+              selectedCategory={category}
+            />
           </GridItem>
         </Show>
         <GridItem area="main">

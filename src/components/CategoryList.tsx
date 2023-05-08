@@ -5,9 +5,10 @@ import { Category } from "../App";
 
 interface Prop {
   onSelectCategory: (category: Category) => void;
+  selectedCategory: Category | null;
 }
 
-const CategoryList = ({ onSelectCategory }: Prop) => {
+const CategoryList = ({ onSelectCategory, selectedCategory }: Prop) => {
   return (
     <List>
       <Heading fontSize="lg" marginY={2}>
@@ -24,7 +25,9 @@ const CategoryList = ({ onSelectCategory }: Prop) => {
               textAlign="left"
               textTransform="capitalize"
               fontSize="sm"
-              fontWeight="medium"
+              fontWeight={
+                selectedCategory?.name === category.name ? "bold" : "medium"
+              }
               onClick={() => onSelectCategory(category)}
             >
               {category.name}
