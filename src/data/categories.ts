@@ -16,7 +16,7 @@ export default [
     params: ["gift", "mens"],
   },
   {
-    name: "bag",
+    name: "bag & leather",
     params: ["bag"],
   },
   {
@@ -24,7 +24,7 @@ export default [
     params: ["cloth", "shoe"],
   },
   {
-    name: "Art",
+    name: "Art & paint",
     params: ["art"],
   },
   {

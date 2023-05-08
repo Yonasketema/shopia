@@ -29,11 +29,9 @@ function App() {
         <GridItem area="nav">
           <NavBar />
         </GridItem>
-        <GridItem area="header" bg="blue.300">
-          header
-        </GridItem>
+        {/* <GridItem area="header">header</GridItem> */}
         <Show above="lg">
-          <GridItem area="aside" bg="orange.300" paddingX={5}>
+          <GridItem area="aside" paddingX={5} paddingY={7}>
             <CategoryList onSelectCategory={setCategory} />
           </GridItem>
         </Show>

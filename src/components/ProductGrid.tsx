@@ -16,7 +16,11 @@ const ProductGrid = ({ selectedCategory }: Prop) => {
   return (
     <>
       {error && <Text color="red.400">{error}</Text>}
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={10} padding={10}>
+      <SimpleGrid
+        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+        spacing={10}
+        padding={10}
+      >
         {isLoading &&
           skeletons.map((skeleton) => <ProductCardSkeleton key={skeleton} />)}
         {products.map((product) => (
