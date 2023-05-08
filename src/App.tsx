@@ -16,10 +16,12 @@ function App() {
     <>
       <Grid
         templateAreas={{
-          base: ` "nav" "header"  "main"`,
+          base: ` "nav" "header"  "main" "footer"`,
           lg: `"nav nav"
                "header header" 
-               "aside main"`, // >1024
+               "aside main"
+               "footer footer"
+               `, // >1024
         }}
         templateColumns={{
           base: "1fr",
@@ -41,6 +43,8 @@ function App() {
         <GridItem area="main">
           <ProductGrid selectedCategory={category} />
         </GridItem>
+
+        {/* <GridItem area="footer">@yonasketema</GridItem> */}
       </Grid>
     </>
   );

@@ -35,6 +35,10 @@ const CategoryList = ({ onSelectCategory, selectedCategory }: Prop) => {
           </HStack>
         </ListItem>
       ))}
+
+      <Button variant="solid" colorScheme="#000">
+        Filter
+      </Button>
     </List>
   );
 };
