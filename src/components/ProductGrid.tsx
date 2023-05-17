@@ -2,7 +2,7 @@ import { SimpleGrid, Text } from "@chakra-ui/react";
 import ProductCard from "./ProductCard";
 import useProduct from "../hooks/useProduct";
 import ProductCardSkeleton from "./ProductCardSkeleton";
-import { Category } from "../App";
+import { Category } from "../pages/HomePage";
 
 interface Prop {
   selectedCategory: Category | null;

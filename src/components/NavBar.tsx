@@ -1,5 +1,6 @@
 import { HStack, Text } from "@chakra-ui/react";
 import SearchInput from "./SearchInput";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -11,9 +12,11 @@ function NavBar() {
       borderBottomWidth={1}
       boxShadow="sm"
     >
-      <Text fontSize="3xl" fontWeight="300" marginRight={150}>
-        Shopia
-      </Text>
+      <Link to="/">
+        <Text fontSize="3xl" fontWeight="300" marginRight={150}>
+          Shopia
+        </Text>
+      </Link>
 
       <SearchInput />
     </HStack>
