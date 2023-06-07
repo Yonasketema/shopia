@@ -1,7 +1,7 @@
 import React from "react";
 import categories from "../data/categories";
 import { Button, HStack, Heading, List, ListItem } from "@chakra-ui/react";
-import { Category } from "../App";
+import { Category } from "../pages/HomePage";
 
 interface Prop {
   onSelectCategory: (category: Category) => void;
