@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 import { CanceledError } from "axios";
+import ImageList from "../components/ImageList";
 
 export interface Product {
   id: number;
@@ -9,6 +10,7 @@ export interface Product {
   description: string;
   last_update: Date;
   image_uri: string;
+  images: ImageList[];
 }
 
 const useProductDetails = (id: string) => {
