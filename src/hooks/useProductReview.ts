@@ -35,7 +35,7 @@ const useProductReview = (id: string) => {
     return () => controller.abort();
   }, [id]);
 
-  return { reviews, error, isLoading };
+  return { reviews, setReviews, error, isLoading };
 };
 
 export default useProductReview;
