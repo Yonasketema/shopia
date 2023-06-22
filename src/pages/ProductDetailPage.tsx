@@ -5,6 +5,7 @@ import {
   Button,
   HStack,
   Heading,
+  Image,
   Input,
   Spinner,
   Text,
@@ -40,9 +41,9 @@ const ProductDetailPage = () => {
     <>
       <HStack alignItems="flex-start" gap={5}>
         <Box width={"50%"}>
-          {/* <Image src={product.image_uri} />
-           */}
-          <ImageList imgs={product.images} />
+          <Image src={product.image_uri} />
+
+          {/* <ImageList imgs={product?.images} /> */}
         </Box>
 
         <Box width={"50%"}>
