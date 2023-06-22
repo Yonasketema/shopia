@@ -23,7 +23,7 @@ const useProductDetails = (id: string) => {
 
     setLoading(true);
     apiClient
-      .get<Product>(`/product/${parseInt(id)}`, {
+      .get<Product>(`/product/${parseInt(id)}/`, {
         signal: controller.signal,
       })
       .then((res) => {

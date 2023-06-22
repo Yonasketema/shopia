@@ -20,7 +20,7 @@ const useProduct = (selectedCategory: Category | null) => {
 
     setLoading(true);
     apiClient
-      .get<Product[]>("/product", {
+      .get<Product[]>("/product/", {
         signal: controller.signal,
         params: { categories: selectedCategory?.params.join(",") },
       })
