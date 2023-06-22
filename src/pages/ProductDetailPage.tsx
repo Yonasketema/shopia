@@ -34,7 +34,8 @@ const ProductDetailPage = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
-  if (isLoading) return <Spinner />;
+
+  if (isLoading || isLoadingReview) return <Spinner />;
   if (error || !product) return <>{error}</>;
 
   return (
@@ -68,11 +69,9 @@ const ProductDetailPage = () => {
           Comment
         </Text>
 
-        {/* com */}
-        {reviews?.map((review) => (
-          <ReviewCard review={review} />
-        ))}
-        {/* com */}
+        {reviews?.map((review) => {
+          return <ReviewCard review={review} key={review.name + id} />;
+        })}
       </Box>
       <Box>
         <Input
