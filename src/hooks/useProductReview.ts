@@ -18,7 +18,7 @@ const useProductReview = (id: string) => {
 
     setLoading(true);
     apiClient
-      .get<Review[]>(`/review/${parseInt(id)}/`, {
+      .get<Review[]>(`/review/${parseInt(id)}`, {
         signal: controller.signal,
       })
       .then((res) => {
